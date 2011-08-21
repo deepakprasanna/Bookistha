@@ -34,10 +34,9 @@ OmniauthDemo::Application.configure do
     OpenID.fetcher.ca_file = "#{Rails.root}/config/ca-bundle.crt"
     
     # providers with id/secret, you need to sign up for their services (see below) and enter the parameters here
-    provider :facebook, 'APP_ID', 'APP_SECRET'
-    provider :twitter, 'CONSUMER_KEY', 'CONSUMER_SECRET'
-    provider :github, 'CLIENT ID', 'SECRET'
-    
+    provider :twitter, '4LuPjNvVgNXcobblIdHw', 'fpS0STTUKW5jRq72lzIihgC5DO1oPhP0IR8iJ9k34tA'
+    provider :facebook, '113226698778341', '351db8099aab1c34cddde7cfce69254d' 
+ 
     # generic openid
     provider :openid, OpenID::Store::Filesystem.new('./tmp'), :name => 'openid'
     

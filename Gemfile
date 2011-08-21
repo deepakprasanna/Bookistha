@@ -7,6 +7,8 @@ gem 'omniauth'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'thin'
+gem 'haml'
 
 # Use unicorn as the web server
 # gem 'unicorn'

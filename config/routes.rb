@@ -1,5 +1,7 @@
 OmniauthDemo::Application.routes.draw do
 
+  resources :books
+
   # Omniauth pure
   match "/signin" => "services#signin"
   match "/signout" => "services#signout"
@@ -24,5 +26,5 @@ OmniauthDemo::Application.routes.draw do
     end
   end
    
-  root :to => "users#index"
+  root :to => "static_pages#home"
 end
