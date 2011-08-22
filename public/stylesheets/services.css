@@ -9,7 +9,7 @@ body { font-size: 14px; line-height: 1.5em; font-family: Verdana,Helvetica,Arial
 
 h1 { font-size: 18px; margin-bottom: 40px; }
 h2 { font-size: 16px; margin-bottom: 30px; }
-h3 { font-size: 14px; margin-bottom: 20px; }
+h3 { font-size: 14px;}
 h4, h5, h6 { font-size: 14px; margin-bottom: 10px; }
 
 ul { list-style: square; margin: 0 0 0 40px; padding: 0; }
@@ -45,7 +45,7 @@ nav ul li.selected a { color: #c81419; }
 #body { padding: 0 20px; }
 
 /* flash message */
-#flash { margin-bottom: 60px; }
+#flash { margin-bottom: 5px; }
 .flash { padding: 5px; background-color: #dddddd; }
 .error { color: #ffffff; background-color: #c81419; }
 .notice { background-color: #ffff00; }

@@ -1,0 +1,47 @@
+.row
+  .span4.columns
+    %p
+      Please us understand the book that you are interested to sell or lend.
+  .span12.columns
+    = form_for(@book) do |f|
+      - if @book.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@book.errors.count, "error")
+            prohibited this book from being saved:
+          %ul
+            - @book.errors.full_messages.each do |msg|
+              %li= msg
+      .clearfix
+        = f.label :name
+        .input
+          = f.text_field :name
+      .clearfix
+        = f.label :author
+        .input
+          = f.text_field :author
+      .clearfix
+        = f.label :description
+        .input
+          = f.text_area :description, :class => "xlarge", :id => "textarea"
+      .clearfix
+        = f.label :publisher
+        .input
+          = f.text_field :publisher
+      .clearfix
+        = f.label :condition
+        .input
+          = f.select :condition, ["Good", "Average", "Bad"], { :include_blank => "Select one"}
+      .clearfix
+        = f.label "Age(in months)"
+        .input
+          = f.select(:age, AGE_RANGE, {:include_blank => "Select one"})
+      .clearfix
+        = f.label :interested_in 
+        .input
+          = f.select :interested_in, ["Selling", "Lending", "Both"], {:include_blank => "Select one"} 
+      = f.hidden_field :user_id, :value => current_user.id
+ 
+      .actions
+        %button.primary.btn{:type => "submit"} Save
+        %button.btn{:type => "reset"} Cancel

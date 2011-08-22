@@ -21,17 +21,15 @@
               %span Sign in with:
               %li= link_to "Facebook", "/auth/facebook"
               %li= link_to "Google", "/auth/google"
-              %li
-                = link_to "Yahoo", "/auth/yahoo"
-                %li
-                  = link_to "MyOpenID", "/auth/myopenid"
-                  %li
-                    = link_to "Other", signin_services_path
+              %li= link_to "Yahoo", "/auth/yahoo"
+              %li= link_to "Other", signin_services_path
       %h1
         Bookistha
         %sup Beta
     %section#body
-      %section#flash
-        - flash.each do |key, value|
-          %div{:class => "flash #{key} round"}= value
-      = yield 
+      -if flash.present?
+        %section#flash
+          - flash.each do |key, value|
+            %div{:class => "flash #{key} round"}= value
+      .container
+        = yield 

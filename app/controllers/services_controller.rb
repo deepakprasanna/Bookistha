@@ -40,7 +40,7 @@ class ServicesController < ApplicationController
         session[:service_id] = @newuser.services.first.id
         
         flash[:notice] = 'Your account has been created and you have been signed in!'
-        redirect_to root_url
+        redirect_to books_path 
       else
         flash[:error] = 'This is embarrassing! There was an error while creating your account from which we were not able to recover.'
         redirect_to root_url
@@ -69,7 +69,6 @@ class ServicesController < ApplicationController
 
     # get the full hash from omniauth
     omniauth = request.env['omniauth.auth']
-    
     # continue only if hash and parameter exist
     if omniauth and params[:service]
 
@@ -121,7 +120,7 @@ class ServicesController < ApplicationController
             session[:service_id] = auth.id
           
             flash[:notice] = 'Signed in successfully via ' + @authhash[:provider].capitalize + '.'
-            redirect_to root_url
+            redirect_to books_path
           else
             # this is a new user; show signup; @authhash is available to the view and stored in the sesssion for creation of a new user
             session[:authhash] = @authhash

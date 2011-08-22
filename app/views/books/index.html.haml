@@ -1,0 +1,14 @@
+.row
+  .span4.columns
+    .user_profile
+      .wavatar
+        %pre.prettyprint
+          %a{:href => "#", :title => "#{current_user.email}"} 
+            %img{:src => gravtastic(current_user.email,150)} 
+  .span12.columns
+    .books_list
+      - @books.each do |b|
+        .book
+          = render :partial => "books/book", :locals => {:book => b }
+    %br
+    = link_to 'Add a Book', new_book_path, :class => "btn big primary" 

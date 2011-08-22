@@ -7,6 +7,8 @@ class CreateBooks < ActiveRecord::Migration
       t.string :publisher
       t.string :condition
       t.integer :user_id
+      t.integer :age
+      t.string :interested_in
 
       t.timestamps
     end

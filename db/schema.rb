@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(:version => 20110821162352) do
     t.string   "publisher"
     t.string   "condition"
     t.integer  "user_id"
+    t.integer  "age"
+    t.text     "mode"
+    t.string   "interested_in"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

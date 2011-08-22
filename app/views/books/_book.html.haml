@@ -1,0 +1,18 @@
+%blockquote
+  %p
+    %h2=book.name
+.row
+  .span6.columns
+    %p=book.description
+  .span5.columns
+    -{"Author(s)" => :author, "Publisher(s)" => :publisher, "Condition" => :condition, "Age" => :age, "Interested in" => :interested_in}.each do |key, value|
+      -if book.send(value).present?
+        %p
+          %code #{key} 
+          %strong=book.send(value)
+=link_to "Edit", edit_book_path(book), :class => "btn small primary" 
+=link_to "Delete", book, :method => :delete, :confirm => "This book can be useful for someone, but are you sure?", :class => "btn small secondary" 
+%br
+%br
+%hr
+  

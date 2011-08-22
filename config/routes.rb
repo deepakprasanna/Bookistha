@@ -1,6 +1,6 @@
 OmniauthDemo::Application.routes.draw do
 
-  resources :books
+  resources :books, :except => [:show]
 
   # Omniauth pure
   match "/signin" => "services#signin"
