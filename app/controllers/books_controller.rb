@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_filter :authenticate_user! 
+  before_filter :validate_preference_presence
   # GET /books
   # GET /books.xml
   def index
@@ -80,5 +81,10 @@ class BooksController < ApplicationController
       format.html { redirect_to(books_url, :notice => 'Book was successfully deleted.') }
       format.xml  { head :ok }
     end
+  end
+
+  private
+  def validate_preference_presence
+    redirect_to preference_path if current_user.preference.nil?
   end
 end

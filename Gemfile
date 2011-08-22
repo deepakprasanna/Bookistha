@@ -9,6 +9,7 @@ gem 'omniauth'
 gem 'sqlite3'
 gem 'thin'
 gem 'haml'
+gem 'carmen'
 
 # Use unicorn as the web server
 # gem 'unicorn'
