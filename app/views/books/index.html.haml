@@ -1,10 +1,14 @@
 .row
   .span4.columns
     .user_profile
-      .wavatar
-        %pre.prettyprint
-          %a{:href => "#", :title => "#{current_user.email}"} 
-            %img{:src => gravtastic(current_user.email,150)} 
+      %pre.prettyprint
+        %img{:src => gravtastic(current_user.email,150), :id => "wavatar", :style => "padding-left:15px;"}
+      .twipsy.below.avatar-twipsy
+        .twipsy-arrow
+        .twipsy-inner
+          We love gravatar and we use it to show your avatar. Checkout 
+          %a(href="http:gravatar.com") gravatar.com
+          to change your avatar.
   .span12.columns
     .books_list
       - @books.each do |b|

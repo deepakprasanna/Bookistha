@@ -46,10 +46,10 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to(books_path, :notice => 'Book was successfully created.') }
+        format.html { redirect_to(books_path, :notice => 'That book was successfully added to your profile.') }
         format.xml  { render :xml => @book, :status => :created, :location => @book }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => "new", :error => "Unable to save to the book." }
         format.xml  { render :xml => @book.errors, :status => :unprocessable_entity }
       end
     end
@@ -65,7 +65,7 @@ class BooksController < ApplicationController
         format.html { redirect_to(books_path, :notice => 'Book was successfully updated.') }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "edit", :error => "Unable to update the book."}
         format.xml  { render :xml => @book.errors, :status => :unprocessable_entity }
       end
     end
@@ -78,7 +78,7 @@ class BooksController < ApplicationController
     @book.destroy
 
     respond_to do |format|
-      format.html { redirect_to(books_url, :notice => 'Book was successfully deleted.') }
+      format.html { redirect_to(books_url, :warning => 'Book was successfully deleted.') }
       format.xml  { head :ok }
     end
   end

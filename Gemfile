@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem 'thin'
 gem 'haml'
 gem 'carmen'
+gem 'jquery-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'

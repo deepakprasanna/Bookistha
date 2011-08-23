@@ -1,5 +1,5 @@
 %section#services_manage.services
-  %h1 Authentication Services - Settings
+  =render :partial => "utils/settings_nav_bar", :locals => {:selected => :services}
   %h2 You can use these accounts to sign in
   - @services.each do |service|
     .service_in_use.round

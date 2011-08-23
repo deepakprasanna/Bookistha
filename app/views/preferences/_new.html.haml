@@ -1,0 +1,58 @@
+= form_for @preference, :url => url , :html => {:method => method} do |f|
+  - if @preference.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@preference.errors.count, "error")
+        prohibited this book from being saved:
+      %ul
+        - @preference.errors.full_messages.each do |msg|
+          %li= msg
+  .clearfix
+    = f.label :slug
+    .input
+      .input-prepend
+        %span.add-on http://bookistha.com/
+        = f.text_field :slug, :id => "prependedInput", :class => "medium"
+        %span.help-block
+          %strong
+            Note:
+          This url will be used as your public profile, it will also turn up when someone tries to see your profile from the search results.
+  .clearfix
+    =f.label "Email Visibility"
+    .input
+      %span.uneditable-input=current_user.email
+      %br
+      = f.check_box :show_email
+      Make my email visible to everyone
+      %span.help-block
+        %strong
+          Note
+        We recommend you to keep your email visible to public for a better response.
+  .clearfix
+    = f.label :contact_number
+    .input
+      .input-append
+        = f.text_field :contact_number, :id => "appendedInput"
+        %label.add-on
+          %span
+            Visible to public
+          = f.check_box :show_contact_number
+      %span.help-block
+        %strong
+          Note
+        We recommend you to keep your email visible to public for a better response.
+  .clearfix
+    = f.label :address
+    .input
+      = f.text_area :address, :class => "xlarge", :id => "textarea"     
+  .clearfix
+    = f.label :city
+    .input
+      = f.text_field :city
+  .clearfix
+    = f.label :country
+    .input
+      = f.select :country, Carmen.countries, {:include_blank => "Select one"}
+  .actions
+    %button.primary.btn{:type => "submit"} Save
+    %button.btn{:type => "reset"} Cancel

@@ -1,0 +1,9 @@
+%ul.tabs
+  -{:services => {:text => "Auth services", :url => "/services"}, :preference => {:text => "Preference", :url => "/preference"}}.each do |key,value|
+    - if selected == key
+      %li.active
+        %a{:href => value[:url]} #{value[:text]}
+    - else
+      %li
+        %a{:href => value[:url]} #{value[:text]}
+  

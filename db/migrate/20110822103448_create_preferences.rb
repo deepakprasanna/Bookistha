@@ -2,6 +2,7 @@ class CreatePreferences < ActiveRecord::Migration
   def self.up
     create_table :preferences do |t|
       t.string :country
+      t.string :city
       t.string :slug
       t.boolean :show_email, :default => true
       t.integer :contact_number

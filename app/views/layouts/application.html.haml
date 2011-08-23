@@ -30,6 +30,8 @@
       -if flash.present?
         %section#flash
           - flash.each do |key, value|
-            %div{:class => "flash #{key} round"}= value
+            %div{:class => "alert-message #{key}"}
+              %a.close{:href => "#"} x
+              %p=value
       .container
         = yield 

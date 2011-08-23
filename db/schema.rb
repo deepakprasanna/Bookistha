@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(:version => 20110822103448) do
     t.string   "condition"
     t.integer  "user_id"
     t.integer  "age"
-    t.text     "mode"
     t.string   "interested_in"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -28,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20110822103448) do
 
   create_table "preferences", :force => true do |t|
     t.string   "country"
+    t.string   "city"
     t.string   "slug"
     t.boolean  "show_email",          :default => true
     t.integer  "contact_number"

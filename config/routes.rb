@@ -27,6 +27,7 @@ OmniauthDemo::Application.routes.draw do
   end
   
   get "/preference" => "preferences#preference" 
-  resources :preferences, :only => [:create, :update]
+  post "/preferences/update" => "preferences#update" 
+  resources :preferences, :only => [:create]
   root :to => "static_pages#home"
 end
