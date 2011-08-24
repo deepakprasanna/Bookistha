@@ -28,8 +28,11 @@ a:hover { color: #c81419; }
 
 /* style the head section */
 #head { margin-bottom: 20px; padding: 0px 20px 20px 20px; border-bottom: 1px solid #bbbbbb; background-color: #eeeeee; }
-#head h1 { font-size: 24px; color: #c81419; margin: 0; }
-#head h1 sup { color: #74809a; font-style: italic; }
+#head h1 { font-size: 24px; color: #c81419; margin: 0; font-family: 'Gloria Hallelujah', cursive;}
+#head h1 sup { color: #74809a; font-style: italic; font-size: 18px; }
+
+#logo h1 { font-size: 50px; color: #c81419; margin: 0; font-family: 'Gloria Hallelujah', cursive; }
+#logo h1 sup { color: #74809a; font-style: italic; font-size:18px; }
 
 #user { }
 
